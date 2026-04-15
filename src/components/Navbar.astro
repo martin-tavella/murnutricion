@@ -1,0 +1,22 @@
+---
+const { logoPath = "/logo.png" } = Astro.props;
+---
+
+<nav class="flex items-center justify-between px-16 py-4 border-b border-stone-200/50 bg-[#FDFBF7]">
+  <div class="flex items-center gap-3">
+    <img src={logoPath} alt="Logo Lic. Mur" class="w-14 h-14 object-contain" />
+    <span class="font-black text-sm tracking-widest text-[#333333] uppercase">
+      LIC. MUR <span class="font-normal text-stone-400 mx-1">|</span> NUTRICIÓN INTEGRAL
+    </span>
+  </div>
+
+  <div class="flex items-center gap-9">
+    <a href="#" class="font-bold text-xs tracking-widest text-[#333333] uppercase hover:text-[#E68A73] transition-colors">Sobre mí</a>
+    <a href="#" class="font-bold text-xs tracking-widest text-[#333333] uppercase hover:text-[#E68A73] transition-colors">Método MUR</a>
+    <a href="#" class="font-bold text-xs tracking-widest text-[#333333] uppercase hover:text-[#E68A73] transition-colors">Servicios</a>
+    <a href="#" class="font-bold text-xs tracking-widest text-[#333333] uppercase hover:text-[#E68A73] transition-colors">Blog</a>
+    <a href="#" class="bg-[#E68A73] hover:bg-[#2F4F4F] text-white font-bold text-xs tracking-widest uppercase px-6 py-3.5 rounded-lg transition-colors">
+      Reservar Turno
+    </a>
+  </div>
+</nav>
