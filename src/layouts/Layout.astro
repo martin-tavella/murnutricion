@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import Floating from "../components/Floating.astro"
+import Navbar from '../components/Navbar.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -12,7 +14,9 @@ import '../styles/global.css'
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<Navbar/>
 		<slot />
+		<Floating />
 	</body>
 </html>
 
