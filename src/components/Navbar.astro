@@ -1,7 +1,7 @@
 ---
 const { logoPath = "/logo.png" } = Astro.props;
 ---
-<nav class="border-b border-stone-200/50 bg-[#FDFBF7] sticky top-0 z-50">
+<nav class="border-b border-stone-200/50 bg-[#FDFBF7] sticky md:fixed top-0 left-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
     
     <div class="flex items-center gap-3 w-full justify-center md:w-auto md:justify-start">
@@ -31,3 +31,5 @@ const { logoPath = "/logo.png" } = Astro.props;
 
   </div>
 </nav>
+
+<div class="hidden md:block h-[80px]"></div>

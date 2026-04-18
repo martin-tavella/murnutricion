@@ -1,0 +1,78 @@
+<section id="metodo-mur" class="bg-[#FDFBF7] px-6 md:px-16 py-16 md:py-28 relative overflow-hidden border-t border-stone-200/30">
+  
+  <div class="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24 relative z-10">
+    
+    <div class="max-w-3xl flex flex-col gap-6">
+      <div class="flex flex-col gap-3">
+        <h2 class="text-xs md:text-sm font-sans font-medium text-[#7D8461] uppercase tracking-[0.2em]">Metodología</h2>
+        <h3 class="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight tracking-tight text-[#333333] uppercase font-black">
+          Método <span class="text-[#E68A73]">MUR</span>
+        </h3>
+      </div>
+      <p class="text-xl md:text-2xl font-serif text-[#333333] leading-relaxed italic">
+        "Porque alimentarte bien también es aprender a sostenerlo en tu vida."
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-20">
+      
+      <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+             <span class="px-3 py-1 bg-[#E68A73]/10 text-[#E68A73] text-[10px] font-bold uppercase tracking-widest rounded-full border border-[#E68A73]/20">Recomendado</span>
+          </div>
+          <h4 class="text-2xl md:text-3xl font-serif text-[#333333]">Proceso Método MUR</h4>
+          <p class="text-stone-600 font-serif text-lg leading-relaxed">
+            Acompañamiento de 4 sesiones orientado a generar cambios sostenibles en la alimentación, los hábitos y la relación con la comida.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
+          {[
+            { n: "1", t: "Evaluación y organización inicial" },
+            { n: "2", t: "Hábitos y rutina" },
+            { n: "3", t: "Relación con la comida" },
+            { n: "4", t: "Sostenimiento y ajustes" }
+          ].map((s) => (
+            <div class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-stone-100 shadow-sm shadow-stone-200/50">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#E68A73] text-white flex items-center justify-center font-bold text-sm">
+                {s.n}
+              </span>
+              <p class="text-[#333333] font-sans font-bold text-sm uppercase tracking-wide leading-snug">
+                {s.t}
+              </p>
+            </div>
+          ))}
+        </div>
+        
+        <p class="text-xs text-[#7D8461] font-medium italic">
+          * No se trata de sesiones aisladas, sino de un proceso diseñado para generar cambios reales.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-8 bg-[#7D8461]/5 p-8 md:p-10 rounded-[2.5rem] border border-[#7D8461]/10 self-start">
+        <div class="flex flex-col gap-4">
+          <h4 class="text-2xl font-serif text-[#333333]">Seguimiento</h4>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Espacio para sostener y ajustar el proceso en el tiempo. Recomendado luego del proceso inicial.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-6">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#7D8461]">Frecuencia</span>
+          <div class="flex flex-col gap-3">
+            {['Semanal', 'Quincenal', 'Mensual'].map(f => (
+              <div class="flex items-center gap-3 pb-2 border-b border-[#7D8461]/10">
+                <svg class="w-4 h-4 text-[#7D8461]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-[#333333] font-sans font-bold text-xs uppercase tracking-widest">{f}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="absolute w-[600px] h-[600px] bg-[#E68A73] rounded-full -bottom-48 -right-48 opacity-[0.02] z-0"></div>
+</section>
