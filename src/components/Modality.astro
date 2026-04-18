@@ -45,7 +45,12 @@
         </div>
       </div>
     </div>
-
+<div class="reveal order-2 flex items-center gap-6 py-4">
+      <h5 class="flex-shrink-0 font-sans font-bold text-[10px] uppercase tracking-[0.3em] text-[#7D8461]">
+        Estructura del acompañamiento
+      </h5>
+      <div class="w-full h-px bg-stone-200/60"></div>
+    </div>
     <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-20 order-3">
       
       <div class="flex flex-col gap-10">
@@ -60,22 +65,23 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 relative">
-          {[
-            { n: "1", t: "Evaluación y organización inicial" },
-            { n: "2", t: "Hábitos y rutina" },
-            { n: "3", t: "Relación con la comida" },
-            { n: "4", t: "Sostenimiento y ajustes" }
-          ].map((s) => (
-            <div class="flex items-center md:items-start gap-4 p-5 rounded-2xl bg-white border border-stone-100 shadow-sm shadow-stone-200/50">
-              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#E68A73] text-white flex items-center justify-center font-bold text-sm">
-                {s.n}
-              </span>
-              <p class="text-[#333333] font-sans font-bold text-[11px] md:text-sm uppercase tracking-wide leading-snug">
-                {s.t}
-              </p>
-            </div>
-          ))}
-        </div>
+  {[
+    { n: "1", t: "Evaluación y organización inicial" },
+    { n: "2", t: "Hábitos y rutina" },
+    { n: "3", t: "Relación con la comida" },
+    { n: "4", t: "Sostenimiento y ajustes" }
+  ].map((s) => (
+    <div class="group flex items-center gap-4 p-5 rounded-2xl bg-white border border-stone-100 shadow-sm shadow-stone-200/50 transition-all duration-300 hover:shadow-md hover:shadow-[#E68A73]/5 hover:border-[#E68A73]/20 hover:-translate-y-1 cursor-default">
+      <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#E68A73]/10 text-[#E68A73] group-hover:bg-[#E68A73] group-hover:text-white flex items-center justify-center font-bold text-sm transition-colors duration-300">
+        {s.n}
+      </span>
+      
+      <p class="text-[#333333] font-sans font-bold text-[11px] md:text-sm uppercase tracking-wide leading-snug group-hover:text-[#E68A73] transition-colors duration-300">
+        {s.t}
+      </p>
+    </div>
+  ))}
+</div>
         
         <p class="text-xs text-[#7D8461] font-medium italic">
           * No se trata de sesiones aisladas, sino de un proceso diseñado para generar cambios reales y sostenibles.
