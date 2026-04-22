@@ -24,45 +24,109 @@
 
           <div class="group p-8 rounded-3xl bg-white border border-stone-200/40 shadow-sm transition-all hover:border-[#E68A73]/30 hover:shadow-md relative overflow-hidden">
              <div class="absolute top-0 right-0">
-               <span class="bg-[#7D8461] text-white text-[9px] font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-widest">Más solicitado</span>
             </div>
             <h5 class="text-xl font-serif text-[#333333] mb-3">Pack de sesiones</h5>
             <p class="text-stone-500 text-sm leading-relaxed font-serif">Seguimiento constante y acompañamiento integral para garantizar que los cambios se sostengan en el tiempo.</p>
           </div>
-        </div>
-      </div>
-
-      <div class="bg-[#333333] text-white p-8 md:p-12 rounded-[3rem] shadow-2xl relative">
-        <div class="flex flex-col gap-8">
-          <div class="flex flex-col gap-5">
-            <h4 class="text-3xl font-serif">Reserva online</h4>
-            <div class="space-y-4">
-              <div class="flex items-start gap-3">
-                <div class="mt-1 w-5 h-5 rounded-full bg-[#E68A73]/20 flex items-center justify-center flex-shrink-0">
-                   <svg class="w-3 h-3 text-[#E68A73]" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-                </div>
-                <p class="text-stone-300 text-sm font-serif">Seña previa obligatoria para confirmar.</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="mt-1 w-5 h-5 rounded-full bg-[#E68A73]/20 flex items-center justify-center flex-shrink-0">
-                   <svg class="w-3 h-3 text-[#E68A73]" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-                </div>
-                <p class="text-stone-300 text-sm font-serif">Cupos mensuales limitados.</p>
-              </div>
+          <div class="group p-8 rounded-3xl bg-white border border-stone-200/40 shadow-sm transition-all hover:border-[#E68A73]/30 hover:shadow-md relative overflow-hidden">
+             <div class="absolute top-0 right-0">
+               <span class="bg-[#7D8461] text-white text-[9px] font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-widest">Más solicitado</span>
             </div>
-          </div>
-
-          <a href="#" class="block w-full bg-[#E68A73] hover:bg-white hover:text-[#333333] text-white font-bold text-xs tracking-[0.2em] uppercase py-5 rounded-2xl text-center transition-all duration-500 shadow-lg shadow-black/20">
-            Reservar turno ahora
-          </a>
-
-          <div class="pt-6 border-t border-white/5">
-            <p class="text-[10px] text-stone-400 italic leading-relaxed text-center">
-              * Importante: La seña no es reembolsable en caso de cancelación.
-            </p>
+            <h5 class="text-xl font-serif text-[#333333] mb-3">Método Mur</h5>
+            <p class="text-stone-500 text-sm leading-relaxed font-serif">Acompañamiento de 4 sesiones orientado a generar cambios sostenibles en la alimentación, los hábitos y la relación con la comida.</p>
           </div>
         </div>
+        
       </div>
+
+     <div class="bg-[#333333] text-white p-8 md:p-12 rounded-[3rem] shadow-2xl relative">
+  <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-5">
+      <h4 class="text-3xl font-serif">Reserva online</h4>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <div class="mt-1 w-5 h-5 rounded-full bg-[#E68A73]/20 flex items-center justify-center flex-shrink-0">
+             <svg class="w-3 h-3 text-[#E68A73]" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          </div>
+          <p class="text-stone-300 text-sm font-serif">Seña previa obligatoria para confirmar.</p>
+        </div>
+      </div>
+    </div>
+
+    <form action="#" method="POST" class="flex flex-col gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex flex-col gap-1.5">
+          <label for="nombre" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Nombre</label>
+          <input 
+            type="text" 
+            id="nombre" 
+            name="nombre" 
+            required 
+            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
+            placeholder="Tu nombre"
+          />
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label for="apellido" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Apellido</label>
+          <input 
+            type="text" 
+            id="apellido" 
+            name="apellido" 
+            required 
+            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
+            placeholder="Tu apellido"
+          />
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <label for="email" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required 
+          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
+          placeholder="ejemplo@mail.com"
+        />
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <label for="telefono" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Teléfono</label>
+        <input 
+          type="tel" 
+          id="telefono" 
+          name="telefono" 
+          required 
+          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
+          placeholder="+54 9..."
+        />
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <label for="consulta" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Motivo de consulta / Servicio</label>
+        <textarea 
+          id="consulta" 
+          name="consulta" 
+          rows="3" 
+          required 
+          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600 resize-none"
+          placeholder="¿En qué puedo ayudarte?"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-[#E68A73] hover:bg-white hover:text-[#333333] text-white font-bold text-xs tracking-[0.2em] uppercase py-5 rounded-2xl text-center transition-all duration-500 shadow-lg shadow-black/20 mt-2">
+        Enviar solicitud
+      </button>
+    </form>
+
+    <div class="pt-6 border-t border-white/5">
+      <p class="text-[10px] text-stone-400 italic leading-relaxed text-center">
+        * Al enviar, me pondré en contacto contigo para coordinar el pago de la seña y confirmar el horario.
+      </p>
+    </div>
+  </div>
+</div>
 
     </div>
   </div>
