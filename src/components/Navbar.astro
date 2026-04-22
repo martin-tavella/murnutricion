@@ -2,10 +2,10 @@
 // src/components/Navbar.astro
 const { logoPath = "/logo.png" } = Astro.props;
 ---
-<nav class="border-b border-stone-200/50 bg-[#FDFBF7] sticky md:fixed top-0 left-0 w-full z-50">
+<nav id="navbar-main" class="border-b border-stone-200/50 bg-[#FDFBF7] sticky md:fixed top-0 left-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
     
-    <div class="flex items-center gap-3 w-full justify-center md:w-auto md:justify-start">
+    <a href="#inicio" class="flex items-center gap-3 w-full justify-center md:w-auto md:justify-start">
       <img src={logoPath} alt="Logo Lic. Mur" class="w-10 h-10 md:w-14 md:h-14 object-contain" />
       
       <div class="flex flex-col justify-center">
@@ -16,7 +16,7 @@ const { logoPath = "/logo.png" } = Astro.props;
           NUTRICIÓN INTEGRAL
         </span>
       </div>
-    </div>
+    </a>
 
     <div id="nav-menu" class="hidden md:flex items-center gap-8">
       <div class="hidden lg:flex items-center gap-8 mr-4">
@@ -36,22 +36,23 @@ const { logoPath = "/logo.png" } = Astro.props;
 <div class="hidden md:block h-[80px]"></div>
 
 <script>
-  // SCRIPT PARA SMOOTH SCROLL (Desplazamiento Suave)
-  // Este script se ejecuta en el navegador del cliente.
+  // SCRIPT ACTUALIZADO PARA SMOOTH SCROLL UNIVERSAL
+  // Se ejecuta en el navegador del cliente.
 
-  // 1. Seleccionamos el menú de navegación
-  const navMenu = document.getElementById('nav-menu');
+  // 1. Seleccionamos toda la etiqueta <nav> (incluye logo y menú)
+  const navbarMain = document.getElementById('navbar-main');
   
-  if (navMenu) {
-    // 2. Buscamos todos los enlaces ancla (que empiezan con #) dentro del menú
-    const links = navMenu.querySelectorAll('a[href^="#"]');
+  if (navbarMain) {
+    // 2. Buscamos TODOS los enlaces ancla (que empiezan con #) dentro de toda la Navbar
+    // Usamos 'a[href^="#"]' para ser precisos.
+    const allAnchorLinks = navbarMain.querySelectorAll('a[href^="#"]');
 
-    links.forEach(link => {
+    allAnchorLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // 3. Prevenimos el comportamiento por defecto del salto instantáneo
+        // 3. Prevenimos el salto instantáneo
         e.preventDefault();
 
-        // 4. Obtenemos el ID de destino del atributo href
+        // 4. Obtenemos el ID de destino (ej: #sobre-mi, #inicio)
         const targetId = this.getAttribute('href');
         
         // Evitamos errores si el href es solo "#"
@@ -60,15 +61,15 @@ const { logoPath = "/logo.png" } = Astro.props;
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          // 5. Calculamos la posición final, restando el alto de la navbar fixed (80px)
-          const offset = 80; // Alto de la navbar en desktop (md:fixed h-[80px])
+          // 5. Calculamos la posición final, restando el offset (80px)
+          const offset = 80; // Alto de la navbar simulado (md:fixed h-[80px])
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-          // 6. Realizamos el scroll suave nativo del navegador
+          // 6. Scroll suave nativo
           window.scrollTo({
             top: offsetPosition,
-            behavior: 'smooth' // Esta es la clave de la magia
+            behavior: 'smooth' // La magia está acá
           });
         }
       });
