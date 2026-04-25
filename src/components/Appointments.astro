@@ -1,3 +1,4 @@
+<script is:inline src="https://www.google.com/recaptcha/api.js" async defer></script>
 <section id="turnos" class="bg-[#F7F5F0] px-6 md:px-16 py-16 md:py-28 relative overflow-hidden border-y border-stone-200/50">
   
   <div class="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
@@ -53,7 +54,7 @@
       </div>
     </div>
 
-    <form action="#" method="POST" class="flex flex-col gap-4">
+    <form id="turno-form" action="#" method="POST" class="flex flex-col gap-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex flex-col gap-1.5">
           <label for="nombre" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Nombre</label>
@@ -62,6 +63,8 @@
             id="nombre" 
             name="nombre" 
             required 
+            pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+            title="Solo se permiten letras"
             class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
             placeholder="Tu nombre"
           />
@@ -73,6 +76,8 @@
             id="apellido" 
             name="apellido" 
             required 
+            pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+            title="Solo se permiten letras"
             class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
             placeholder="Tu apellido"
           />
@@ -115,6 +120,12 @@
         ></textarea>
       </div>
 
+      <div class="flex flex-col gap-1 items-center justify-center mt-2">
+        <!-- Clave de prueba de Google reCAPTCHA (siempre válida en localhost) -->
+        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
+        <p id="recaptcha-error" class="text-red-400 text-[10px] uppercase tracking-widest hidden mt-1">Por favor, completa el reCAPTCHA.</p>
+      </div>
+
       <button type="submit" class="w-full bg-[#E68A73] hover:bg-white hover:text-[#333333] text-white font-bold text-xs tracking-[0.2em] uppercase py-5 rounded-2xl text-center transition-all duration-500 shadow-lg shadow-black/20 mt-2">
         Enviar solicitud
       </button>
@@ -133,3 +144,36 @@
 
   <div class="absolute w-80 h-80 bg-[#E68A73] rounded-full -top-40 -left-20 opacity-[0.03] z-0"></div>
 </section>
+
+<script>
+  const nombreInput = document.getElementById('nombre') as HTMLInputElement | null;
+  const apellidoInput = document.getElementById('apellido') as HTMLInputElement | null;
+  const turnoForm = document.getElementById('turno-form') as HTMLFormElement | null;
+  const recaptchaError = document.getElementById('recaptcha-error') as HTMLParagraphElement | null;
+
+  const validateLettersOnly = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+    target.value = target.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
+  };
+
+  if (nombreInput) nombreInput.addEventListener('input', validateLettersOnly);
+  if (apellidoInput) apellidoInput.addEventListener('input', validateLettersOnly);
+
+  if (turnoForm) {
+    turnoForm.addEventListener('submit', (e) => {
+      // @ts-ignore
+      if (typeof grecaptcha !== 'undefined') {
+        // @ts-ignore
+        const response = grecaptcha.getResponse();
+        if (response.length === 0) {
+          // El CAPTCHA no fue completado
+          e.preventDefault();
+          if (recaptchaError) recaptchaError.classList.remove('hidden');
+        } else {
+          // CAPTCHA completado
+          if (recaptchaError) recaptchaError.classList.add('hidden');
+        }
+      }
+    });
+  }
+</script>
