@@ -40,7 +40,7 @@
         
       </div>
 
-     <div class="bg-[#333333] text-white p-8 md:p-12 rounded-[3rem] shadow-2xl relative">
+     <div id="turno-form" class="bg-[#333333] text-white p-8 md:p-12 rounded-[3rem] shadow-2xl relative scroll-mt-28">
   <div class="flex flex-col gap-8">
     <div class="flex flex-col gap-5">
       <h4 class="text-3xl font-serif">Reserva online</h4>
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <form id="turno-form" action="#" method="POST" class="flex flex-col gap-4">
+    <form id="turno-form-element" action="#" method="POST" class="flex flex-col gap-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex flex-col gap-1.5">
           <label for="nombre" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Nombre</label>
@@ -148,7 +148,7 @@
 <script>
   const nombreInput = document.getElementById('nombre') as HTMLInputElement | null;
   const apellidoInput = document.getElementById('apellido') as HTMLInputElement | null;
-  const turnoForm = document.getElementById('turno-form') as HTMLFormElement | null;
+  const turnoForm = document.getElementById('turno-form-element') as HTMLFormElement | null;
   const recaptchaError = document.getElementById('recaptcha-error') as HTMLParagraphElement | null;
 
   const validateLettersOnly = (e: Event) => {
