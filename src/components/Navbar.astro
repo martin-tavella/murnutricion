@@ -23,7 +23,7 @@ const { logoPath = "/logo-mur.png" } = Astro.props;
   </div>
 </nav>
 
-<div class="hidden md:block h-[80px]"></div>
+<div class="hidden md:block h-[112px]"></div>
 
 <script>
   // SCRIPT ACTUALIZADO PARA SMOOTH SCROLL UNIVERSAL
@@ -51,8 +51,8 @@ const { logoPath = "/logo-mur.png" } = Astro.props;
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          // 5. Calculamos la posición final, restando el offset (80px)
-          const offset = 80; // Alto de la navbar simulado (md:fixed h-[80px])
+          // 5. Calculamos la posición final, restando el offset dinámico
+          const offset = navbarMain.offsetHeight; // Alto dinámico de la navbar
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - offset;
 
