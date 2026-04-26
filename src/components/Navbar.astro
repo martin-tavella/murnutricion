@@ -1,20 +1,11 @@
 ---
-const { logoPath = "/logo.png" } = Astro.props;
+const { logoPath = "/logo-mur.png" } = Astro.props;
 ---
 <nav id="navbar-main" class="border-b border-stone-200/50 bg-[#FDFBF7] sticky md:fixed top-0 left-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
     
-    <a href="#inicio" class="flex items-center gap-3 w-full justify-center md:w-auto md:justify-start">
-      <img src={logoPath} alt="Logo Lic. Mur" class="w-10 h-10 md:w-14 md:h-14 object-contain" />
-      
-      <div class="flex flex-col justify-center">
-        <span class="font-black text-[12px] md:text-sm tracking-[0.15em] text-[#333333] uppercase leading-none mb-1">
-          LIC. MUR <span class="hidden md:inline font-normal text-stone-400 mx-1">|</span>
-        </span>
-        <span class="font-medium text-[9px] md:text-sm tracking-[0.1em] text-stone-500 uppercase leading-none">
-          NUTRICIÓN INTEGRAL
-        </span>
-      </div>
+    <a href="#inicio" class="flex items-center w-full justify-center md:w-auto md:justify-start">
+      <img src={logoPath} alt="Logo Lic. Mur" class="h-16 md:h-20 w-auto object-contain" />
     </a>
 
     <div id="nav-menu" class="hidden md:flex items-center gap-8">
