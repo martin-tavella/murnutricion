@@ -54,6 +54,14 @@
     </div>
 
     <form id="turno-form-element" action="#" method="POST" class="flex flex-col gap-4">
+      <!-- Invitación a WhatsApp (solo mobile) -->
+      <div class="md:hidden mb-2">
+        <p class="text-xs text-stone-300 font-serif leading-relaxed">
+          ¿Preferís coordinar por WhatsApp? 
+          <a href="https://wa.me/5491111111111" target="_blank" class="text-[#E68A73] font-bold underline decoration-[#E68A73]/30 hover:decoration-[#E68A73] transition-all">Escribime acá</a>
+        </p>
+      </div>
+
       <div class="grid grid-cols-2 gap-4">
         <div class="flex flex-col gap-1.5">
           <label for="nombre" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Nombre</label>
@@ -120,7 +128,25 @@
       </div>
 
       <!-- Widget de reCAPTCHA v2 -->
-      <div class="g-recaptcha mb-4" data-sitekey="6LcUp88sAAAAAJnvzSMt0dmTX8avPPdMO2hgZgu4" data-theme="dark"></div>
+      <div class="captcha-container mb-4 overflow-hidden flex justify-center">
+        <div class="g-recaptcha" data-sitekey="6LcUp88sAAAAAJnvzSMt0dmTX8avPPdMO2hgZgu4" data-theme="dark"></div>
+      </div>
+
+      <style>
+        @media (max-width: 400px) {
+          .captcha-container {
+            transform: scale(0.85);
+            transform-origin: center center;
+            margin-left: -20px;
+            margin-right: -20px;
+          }
+        }
+        @media (max-width: 350px) {
+          .captcha-container {
+            transform: scale(0.75);
+          }
+        }
+      </style>
       <button id="submit-btn" type="submit" class="cursor-pointer w-full bg-[#E68A73] hover:bg-white hover:text-[#333333] text-white font-bold text-xs tracking-[0.2em] uppercase py-5 rounded-2xl text-center transition-all duration-500 shadow-lg shadow-black/20 mt-2 relative overflow-hidden group">
         <span id="submit-text" class="transition-opacity duration-300">Enviar solicitud</span>
         <span id="submit-loading" class="hidden absolute inset-0 flex items-center justify-center bg-[#E68A73] text-white">
