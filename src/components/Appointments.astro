@@ -1,5 +1,5 @@
-<!-- Cargar el script de reCAPTCHA v3 de Google -->
-<script src="https://www.google.com/recaptcha/api.js?render=6LdVm88sAAAAAJhEtN50_eUjpaF82QXo7tXVvtNf" async defer is:inline></script>
+<!-- Cargar el script de reCAPTCHA v2 de Google -->
+<script src="https://www.google.com/recaptcha/api.js" async defer is:inline></script>
 
 <section id="turnos" class="bg-[#F7F5F0] px-6 md:px-16 py-16 md:py-28 relative overflow-hidden border-y border-stone-200/50">
   
@@ -119,7 +119,8 @@
         ></textarea>
       </div>
 
-      <!-- Formulario enviado con reCAPTCHA v3 invisible -->
+      <!-- Widget de reCAPTCHA v2 -->
+      <div class="g-recaptcha mb-4" data-sitekey="6LcUp88sAAAAAJnvzSMt0dmTX8avPPdMO2hgZgu4" data-theme="dark"></div>
       <button id="submit-btn" type="submit" class="cursor-pointer w-full bg-[#E68A73] hover:bg-white hover:text-[#333333] text-white font-bold text-xs tracking-[0.2em] uppercase py-5 rounded-2xl text-center transition-all duration-500 shadow-lg shadow-black/20 mt-2 relative overflow-hidden group">
         <span id="submit-text" class="transition-opacity duration-300">Enviar solicitud</span>
         <span id="submit-loading" class="hidden absolute inset-0 flex items-center justify-center bg-[#E68A73] text-white">
@@ -143,6 +144,8 @@
     </div>
   </div>
 </div>
+
+
 
     </div>
   </div>
@@ -181,15 +184,21 @@
       if (formSuccessMsg) formSuccessMsg.classList.add('hidden');
 
       try {
-        // Ejecutar reCAPTCHA v3 de forma invisible
-        const token = await new Promise((resolve) => {
-          grecaptcha.ready(() => {
-            grecaptcha.execute('6LdVm88sAAAAAJhEtN50_eUjpaF82QXo7tXVvtNf', {action: 'submit'}).then(resolve);
-          });
-        });
+        // Validación frontend de reCAPTCHA v2
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+          if (formErrorMsg) {
+            formErrorMsg.textContent = "Por favor, completa el captcha para continuar.";
+            formErrorMsg.classList.remove('hidden');
+          }
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitText) submitText.classList.remove('opacity-0');
+          if (submitLoading) submitLoading.classList.add('hidden');
+          return;
+        }
 
         const formData = new FormData(turnoForm);
-        formData.append('g-recaptcha-response', token);
+        formData.append('g-recaptcha-response', recaptchaResponse);
         
         // Petición al script PHP local
         const res = await fetch('/contacto.php', {
@@ -203,6 +212,8 @@
           // Éxito:
           if (formSuccessMsg) formSuccessMsg.classList.remove('hidden');
           turnoForm.reset();
+          grecaptcha.reset(); // Reiniciar el captcha después de enviar
+
         } else {
           // Error en el servidor PHP:
           console.error(resData);
