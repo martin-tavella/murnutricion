@@ -10,9 +10,24 @@ import WhatsApp from '../components/WhatsApp.astro';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Lic. Mur Nutrición</title>
+		
+		<!-- SEO & Open Graph -->
+		<title>Lic. Mur Nutrición | Bienestar Integral</title>
+		<meta name="description" content="Acompañamiento nutricional online, sin dietas restrictivas, diseñado para tu bienestar integral. Basado en el Método MUR." />
+		
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://murnutricion.com.ar/" />
+		<meta property="og:title" content="Lic. Mur Nutrición | Bienestar Integral" />
+		<meta property="og:description" content="Acompañamiento nutricional online, sin dietas restrictivas, diseñado para tu bienestar integral." />
+		<meta property="og:image" content="https://murnutricion.com.ar/mur.jpg" />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://murnutricion.com.ar/" />
+		<meta property="twitter:title" content="Lic. Mur Nutrición | Bienestar Integral" />
+		<meta property="twitter:description" content="Acompañamiento nutricional online, sin dietas restrictivas, diseñado para tu bienestar integral." />
+		<meta property="twitter:image" content="https://murnutricion.com.ar/mur.jpg" />
 	</head>
 	<body>
 		<Navbar/>
