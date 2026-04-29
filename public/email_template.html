@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nueva Consulta - Lic. Mur Nutricionista</title>
+</head>
+<body style="margin:0; padding:0; background-color:#F5F0EB; font-family: Georgia, 'Times New Roman', serif;">
+
+  <!-- Wrapper -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F5F0EB; padding: 32px 16px;">
+    <tr>
+      <td align="center">
+
+        <!-- Card -->
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#FAF7F4; border-radius:12px; overflow:hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07);">
+
+          <!-- Top bar terracotta -->
+          <tr>
+            <td style="background-color:#D4785A; height:6px; font-size:0; line-height:0;">&nbsp;</td>
+          </tr>
+
+          <!-- Header with logo area -->
+          <tr>
+            <td style="padding: 32px 40px 24px 40px; background-color:#FAF7F4; border-bottom: 1px solid #E8DDD5;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td>
+                    <!-- Brand name as text (safe fallback for email) -->
+                    <div style="font-family: Georgia, serif; font-size: 22px; color: #D4785A; letter-spacing: 0.5px; line-height:1;">Lic. Mur</div>
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; color: #6B6B6B; letter-spacing: 3px; text-transform: uppercase; margin-top: 4px;">NUTRICIONISTA</div>
+                  </td>
+                  <td align="right" style="vertical-align: middle;">
+                    <span style="background-color:#D4785A; color:#ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 10px; font-weight: bold; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; display:inline-block;">Nueva Consulta</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Title section -->
+          <tr>
+            <td style="padding: 32px 40px 8px 40px; background-color:#FAF7F4;">
+              <div style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; color: #D4785A; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 10px;">Formulario Web</div>
+              <div style="font-family: Georgia, 'Times New Roman', serif; font-size: 26px; color: #2C2C2C; line-height: 1.3; margin-bottom: 6px;">Recibiste una nueva<br/><span style="color:#D4785A;">solicitud de turno</span></div>
+              <!-- Accent line -->
+              <div style="width: 44px; height: 3px; background-color: #D4785A; margin-top: 14px;"></div>
+            </td>
+          </tr>
+
+          <!-- Intro text -->
+          <tr>
+            <td style="padding: 16px 40px 28px 40px;">
+              <p style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: #6B6B6B; line-height: 1.7; margin: 0;">
+                Alguien completó el formulario de contacto de tu sitio web. A continuación encontrás los datos ingresados.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Data fields -->
+          <tr>
+            <td style="padding: 0 40px 8px 40px;">
+
+              <!-- Nombre -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 12px;">
+                <tr>
+                  <td style="background-color:#F5F0EB; border-radius: 8px; padding: 16px 20px; border-left: 3px solid #D4785A;">
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; color: #D4785A; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">Nombre completo</div>
+                    <div style="font-family: Georgia, serif; font-size: 17px; color: #2C2C2C;">{{nombre}} {{apellido}}</div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Email -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 12px;">
+                <tr>
+                  <td style="background-color:#F5F0EB; border-radius: 8px; padding: 16px 20px; border-left: 3px solid #E8DDD5;">
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; color: #D4785A; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">Email</div>
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: #2C2C2C;">
+                      <a href="mailto:{{email_cliente}}" style="color: #D4785A; text-decoration: none;">{{email_cliente}}</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Teléfono -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 12px;">
+                <tr>
+                  <td style="background-color:#F5F0EB; border-radius: 8px; padding: 16px 20px; border-left: 3px solid #E8DDD5;">
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; color: #D4785A; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">Teléfono</div>
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: #2C2C2C;">
+                      <a href="tel:{{telefono}}" style="color: #2C2C2C; text-decoration: none;">{{telefono}}</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Consulta -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 8px;">
+                <tr>
+                  <td style="background-color:#FDF0EB; border-radius: 8px; padding: 18px 20px; border-left: 3px solid #D4785A;">
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; color: #D4785A; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">Consulta / Servicio</div>
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: #2C2C2C; line-height: 1.75; white-space: pre-wrap;">{{consulta}}</div>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td style="padding: 0 40px;">
+              <div style="height:1px; background-color:#E8DDD5;"></div>
+            </td>
+          </tr>
+
+          <!-- Quote -->
+          <tr>
+            <td style="padding: 28px 40px;">
+              <p style="font-family: Georgia, 'Times New Roman', serif; font-size: 13px; color: #D4785A; font-style: italic; text-align: center; line-height: 1.7; margin: 0;">
+                "No se trata solo de qué comer,<br/>sino de cómo sostenerlo en tu vida real."
+              </p>
+              <p style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; color: #6B6B6B; text-align: center; letter-spacing: 1px; margin: 8px 0 0 0;">— Lic. Estefanía Murstein</p>
+            </td>
+          </tr>
+
+          <!-- Footer bar -->
+          <tr>
+            <td style="background-color:#D4785A; padding: 18px 40px; border-radius: 0 0 12px 12px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td>
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 11px; color: #ffffff; font-weight: bold;">Lic. Estefanía Murstein</div>
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; color: rgba(255,255,255,0.75); margin-top: 2px; letter-spacing: 1px; text-transform: uppercase;">Nutricionista</div>
+                  </td>
+                  <td align="right">
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; color: rgba(255,255,255,0.85);">@lic_mur_nutricion</div>
+                    <div style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; color: rgba(255,255,255,0.75); margin-top: 2px;">linkedin.com/in/lic-em/</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!-- end card -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
