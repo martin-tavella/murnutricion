@@ -1,48 +1,65 @@
 ---
-import '../styles/global.css'
-import Floating from "../components/Floating.astro"
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import WhatsApp from '../components/WhatsApp.astro';
+import "../styles/global.css";
+import Floating from "../components/Floating.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WhatsApp from "../components/WhatsApp.astro";
 ---
+
 <!doctype html>
 <html lang="es" class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<!-- SEO & Open Graph -->
-		<title>Lic. Mur Nutrición | Bienestar Integral</title>
-		<meta name="description" content="Acompañamiento nutricional online, sin dietas restrictivas, diseñado para tu bienestar integral. Basado en el Método MUR." />
-		
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://murnutricion.com.ar/" />
-		<meta property="og:title" content="Lic. Mur Nutrición | Bienestar Integral" />
-		<meta property="og:description" content="Acompañamiento nutricional online, sin dietas restrictivas, diseñado para tu bienestar integral." />
-		<meta property="og:image" content="https://murnutricion.com.ar/mur.jpg" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
 
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://murnutricion.com.ar/" />
-		<meta property="twitter:title" content="Lic. Mur Nutrición | Bienestar Integral" />
-		<meta property="twitter:description" content="Acompañamiento nutricional online, sin dietas restrictivas, diseñado para tu bienestar integral." />
-		<meta property="twitter:image" content="https://murnutricion.com.ar/mur.jpg" />
-	</head>
-	<body>
-		<Navbar/>
-		<slot />
-		<Floating />
-		<WhatsApp />
-		<Footer />
-	</body>
+    <!-- HTML Meta Tags -->
+    <title>Lic. Mur Nutrición</title>
+    <meta
+      name="description"
+      content="Transformá tu alimentación sin dietas restrictivas. Acompañamiento nutricional online diseñado para tu bienestar integral y un cambio de hábitos sostenible."
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://murnutricion.com.ar/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lic. Mur Nutrición" />
+    <meta
+      property="og:description"
+      content="Transformá tu alimentación sin dietas restrictivas. Acompañamiento nutricional online diseñado para tu bienestar integral y un cambio de hábitos sostenible."
+    />
+    <meta property="og:image" content="https://murnutricion.com.ar/logo.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="murnutricion.com.ar" />
+    <meta property="twitter:url" content="https://murnutricion.com.ar/" />
+    <meta name="twitter:title" content="Lic. Mur Nutrición" />
+    <meta
+      name="twitter:description"
+      content="Transformá tu alimentación sin dietas restrictivas. Acompañamiento nutricional online diseñado para tu bienestar integral y un cambio de hábitos sostenible."
+    />
+    <meta name="twitter:image" content="https://murnutricion.com.ar/logo.png" />
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+    <!-- NOTE: You selected a new image. Please upload it to your server and replace "YOUR_IMAGE_URL_HERE" with the actual URL. -->
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Floating />
+    <WhatsApp />
+    <Footer />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
