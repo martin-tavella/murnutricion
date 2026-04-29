@@ -119,8 +119,7 @@
         ></textarea>
       </div>
 
-      <!-- Anti-Spam de Web3Forms -->
-      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+      <!-- Formulario -> Script PHP local -->
 
       <button id="submit-btn" type="submit" class="cursor-pointer w-full bg-[#E68A73] hover:bg-white hover:text-[#333333] text-white font-bold text-xs tracking-[0.2em] uppercase py-5 rounded-2xl text-center transition-all duration-500 shadow-lg shadow-black/20 mt-2 relative overflow-hidden group">
         <span id="submit-text" class="transition-opacity duration-300">Enviar solicitud</span>
@@ -185,25 +184,22 @@
       try {
         const formData = new FormData(turnoForm);
         
-        // Configuración para Web3Forms
-        formData.append("access_key", import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY);
-        formData.append("subject", "Nuevo Turno Web - " + formData.get("nombre"));
-        
-        const res = await fetch('https://api.web3forms.com/submit', {
+        // Petición al script PHP local
+        const res = await fetch('/contacto.php', {
           method: 'POST',
           body: formData
         });
 
         const resData = await res.json().catch(() => ({})); 
 
-        if (res.ok && resData.success) { // Web3Forms devuelve success en true
+        if (res.ok && resData.success) { 
           // Éxito:
           if (formSuccessMsg) formSuccessMsg.classList.remove('hidden');
           turnoForm.reset();
         } else {
-          // Error en Servidor Web3Forms:
+          // Error en el servidor PHP:
           console.error(resData);
-          throw new Error('Server returned an error');
+          throw new Error(resData.message || 'Server returned an error');
         }
       } catch (err) {
         console.error("Fetch Error:", err);
