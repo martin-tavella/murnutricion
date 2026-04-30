@@ -56,74 +56,59 @@
     <form id="turno-form-element" action="#" method="POST" class="flex flex-col gap-4">
       <!-- Invitación a WhatsApp (solo mobile) -->
       <div class="md:hidden mb-2">
-        <p class="text-xs text-stone-300 font-serif leading-relaxed">
+        <p class="text-sm text-stone-300 font-serif leading-relaxed">
           ¿Preferís coordinar por WhatsApp? 
-          <a href="https://wa.me/5491168399939" target="_blank" class="text-[#E68A73] font-bold underline decoration-[#E68A73]/30 hover:decoration-[#E68A73] transition-all">Toca aquí</a>
+          <a href="https://wa.me/5491168399939" target="_blank" class="text-[#E68A73] font-bold underline decoration-[#E68A73]/30 hover:decoration-[#E68A73] transition-all ml-1">Toca acá</a>
         </p>
       </div>
 
-      <div class="grid grid-cols-2 gap-4">
-        <div class="flex flex-col gap-1.5">
-          <label for="nombre" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Nombre</label>
-          <input 
-            type="text" 
-            id="nombre" 
-            name="nombre" 
-            required 
-            pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
-            title="Solo se permiten letras"
-            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
-            placeholder="Tu nombre"
-          />
-        </div>
-        <div class="flex flex-col gap-1.5">
-          <label for="apellido" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Apellido</label>
-          <input 
-            type="text" 
-            id="apellido" 
-            name="apellido" 
-            required 
-            pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
-            title="Solo se permiten letras"
-            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
-            placeholder="Tu apellido"
-          />
-        </div>
+      <div class="flex flex-col gap-1.5">
+        <label for="nombre" class="hidden">Nombre y Apellido</label>
+        <input 
+          type="text" 
+          id="nombre" 
+          name="nombre" 
+          required 
+          pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+          title="Solo se permiten letras"
+          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-500"
+          placeholder="Nombre y Apellido"
+        />
       </div>
 
       <div class="flex flex-col gap-1.5">
-        <label for="email" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Email</label>
+        <label for="email" class="hidden">Email</label>
         <input 
           type="email" 
           id="email" 
           name="email" 
           required 
-          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
-          placeholder="ejemplo@mail.com"
+          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-500"
+          placeholder="Email"
         />
       </div>
 
       <div class="flex flex-col gap-1.5">
-        <label for="telefono" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Teléfono</label>
+        <label for="telefono" class="hidden">Teléfono</label>
         <input 
           type="tel" 
           id="telefono" 
           name="telefono" 
           required 
-          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600"
-          placeholder="+54 9..."
+          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-500"
+          placeholder="Teléfono"
         />
       </div>
 
       <div class="flex flex-col gap-1.5">
-        <label for="consulta" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans ml-1">Motivo de consulta / Servicio</label>
+        <label for="consulta" class="hidden">Motivo de consulta / Servicio</label>
         <textarea 
           id="consulta" 
           name="consulta" 
           rows="3" 
           required 
-          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-600 resize-none"
-          placeholder="¿En qué puedo ayudarte?"
+          class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E68A73] transition-colors placeholder:text-stone-500 resize-none"
+          placeholder="Motivo de consulta / Servicio"
         ></textarea>
       </div>
 
@@ -181,7 +166,6 @@
 
 <script>
   const nombreInput = document.getElementById('nombre') as HTMLInputElement | null;
-  const apellidoInput = document.getElementById('apellido') as HTMLInputElement | null;
   const turnoForm = document.getElementById('turno-form-element') as HTMLFormElement | null;
 
   const validateLettersOnly = (e: Event) => {
@@ -190,7 +174,6 @@
   };
 
   if (nombreInput) nombreInput.addEventListener('input', validateLettersOnly);
-  if (apellidoInput) apellidoInput.addEventListener('input', validateLettersOnly);
 
   if (turnoForm) {
     turnoForm.addEventListener('submit', async (e) => {

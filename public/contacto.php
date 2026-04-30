@@ -40,7 +40,6 @@ function loadEnv() {
 loadEnv();
 
 $nombre = $_POST['nombre'] ?? '';
-$apellido = $_POST['apellido'] ?? '';
 $email_cliente = $_POST['email'] ?? '';
 $telefono = $_POST['telefono'] ?? '';
 $consulta = $_POST['consulta'] ?? '';
@@ -110,11 +109,11 @@ if (empty($smtp_user) || empty($smtp_pass) || empty($receiver_email)) {
     exit();
 }
 
-$subject = "Nuevo Turno Web - " . $nombre . " " . $apellido;
+$subject = "Nuevo Turno Web - " . $nombre;
 
 // Versión en texto plano (AltBody)
 $text_message = "Has recibido una nueva consulta desde la web:\n\n";
-$text_message .= "Nombre: " . $nombre . " " . $apellido . "\n";
+$text_message .= "Nombre: " . $nombre . "\n";
 $text_message .= "Email del paciente: " . $email_cliente . "\n";
 $text_message .= "Teléfono: " . $telefono . "\n\n";
 $text_message .= "Consulta/Servicio:\n" . $consulta . "\n";
@@ -127,7 +126,6 @@ if (file_exists($html_template_path)) {
     $html_message = file_get_contents($html_template_path);
     // Reemplazar las variables {{variable}} por los datos reales
     $html_message = str_replace('{{nombre}}', htmlspecialchars($nombre), $html_message);
-    $html_message = str_replace('{{apellido}}', htmlspecialchars($apellido), $html_message);
     $html_message = str_replace('{{email_cliente}}', htmlspecialchars($email_cliente), $html_message);
     $html_message = str_replace('{{telefono}}', htmlspecialchars($telefono), $html_message);
     $html_message = str_replace('{{consulta}}', nl2br(htmlspecialchars($consulta)), $html_message);
@@ -159,7 +157,7 @@ try {
     // Remitente y destinatarios
     $mail->setFrom($smtp_user, 'Turnos Mur Nutrición');
     $mail->addAddress($receiver_email); // A dónde llega el correo (tu gmail)
-    $mail->addReplyTo($email_cliente, $nombre . ' ' . $apellido); // Para que al darle "Responder" le envíes al paciente
+    $mail->addReplyTo($email_cliente, $nombre); // Para que al darle "Responder" le envíes al paciente
 
     // Contenido
     $mail->isHTML(true);
